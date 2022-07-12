@@ -39,7 +39,7 @@ with open('tweet_json.txt', 'w') as outfile:
             print("Success")
             json.dump(tweet._json, outfile)
             outfile.write('\n')
-        except tweepy.TweepError as e:
+        except tweepy.errors.TweepyExceptions as e:
             print("Fail")
             fails_dict[tweet_id] = e
             pass
